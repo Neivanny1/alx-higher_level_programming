@@ -7,3 +7,4 @@ Task 4: 4-print_float.py - Python code that print the float stored in the variab
 Task 5: 5-print_string.py - Python script to print 3 times a string stored in the variable str, followed by its first 9 characters.
 Task 6: 6-concat.py - python script to concatenate 2 strings to print Welcome to Holberton School!
 Task 7: 7-edges - string manipulation
+Task 8: 8-concat_edges.py - more string manipulation
