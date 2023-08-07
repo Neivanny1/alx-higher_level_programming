@@ -6,3 +6,4 @@ Task 3: 3-print_number.py - Python script that print the integer stored in the v
 Task 4: 4-print_float.py - Python code that print the float stored in the variable number with a precision of 2 digits using f string.
 Task 5: 5-print_string.py - Python script to print 3 times a string stored in the variable str, followed by its first 9 characters.
 Task 6: 6-concat.py - python script to concatenate 2 strings to print Welcome to Holberton School!
+Task 7: 7-edges - string manipulation
