@@ -1,0 +1,51 @@
+=======================
+``add_integer`` module
+=======================
+
+Using ``add_integer`` with two variables ``a`` and ``b``, where both variables
+must be an integer or a float (which will be converted to integer)
+-------------------
+
+Import:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Add two integers:
+    >>> add_integer(1, 2)
+    3
+
+Add positive and negative integers:
+    >>> add_integer(100, -2)
+    98
+
+Add a float and integer:
+    >>> add_integer(100.3, -2)
+    98
+
+Add an integer and a string:
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+    	      ...
+    TypeError: b must be an integer
+
+Add a bool and an integer:
+    >>> add_integer(True, 1)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: a must be an integer
+
+Add a bool and a bool:
+    >>> add_integer(True, False)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: a must be an integer
+
+Add an integer and a list:
+    >>> add_integer(1, [1, 2, 3])
+    Traceback (most recent call last):
+    	      ...
+    TypeError: b must be an integer
+Add a none:
+    >>> add_integer(None);
+    Traceback (most recent call last):
+    	      ...
+    TypeError: a must be an integer
