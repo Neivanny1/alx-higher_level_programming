@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-Defines a class Mylist that inherits from lists
+defines class MyList that inherits from list
 """
 
 
 class MyList(list):
-    """MyList initialization"""
+    """ initializes MyList """
     def __init__(self):
         pass
 
-    """prints sorted list"""
+    """ prints sorted list """
     def print_sorted(self):
         print(sorted(self))
