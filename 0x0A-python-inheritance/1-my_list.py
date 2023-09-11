@@ -9,6 +9,5 @@ class MyList(list):
     def __init__(self):
         pass
 
-    """ prints sorted list """
     def print_sorted(self):
         print(sorted(self))
