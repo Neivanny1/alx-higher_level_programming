@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+"""
+Defines a class called base
+"""
+
+
+
+class Base:
+    __nb_objects = 0
+    """class initialization"""
+    def __init__(self, id=None):
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
