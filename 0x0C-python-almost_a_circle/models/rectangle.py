@@ -69,3 +69,7 @@ class Rectangle(Base):
         """Print shape of rectangle with # in stdout"""
         for i in range(self.height):
             print('#' * self.width)
+    def __str__(self):
+        """ overriding the __str__ method"""
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height)
