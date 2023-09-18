@@ -13,12 +13,14 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ Returns A JSON STRING"""
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes JSON string representation of list_objs to a file"""
@@ -37,6 +39,7 @@ class Base:
         if not json_string:
             return []
         return json.loads(json_string)
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -47,6 +50,7 @@ class Base:
             a = cls(1)
         a.update(**dictionary)
         return a
+
     @classmethod
     def load_from_file(cls):
         """loads list of intances from JSON file"""
@@ -56,6 +60,7 @@ class Base:
                         dictionary in cls.from_json_string(f.read())]
         except FileNotFoundError:
             return []
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """save_to_file_csv"""
@@ -71,6 +76,7 @@ class Base:
             writer = csv.writer(f)
             for row in ld:
                 writer.writerow(row)
+
     @classmethod
     def load_from_file_csv(cls):
         """load_from_file_csv"""

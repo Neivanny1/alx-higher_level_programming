@@ -16,6 +16,7 @@ class Square_Tests(unittest.TestCase):
         pep8style = pep8.StyleGuide(quite=True)
         result = pep8style.check_files(['./models/square.py'])
         self.assertEqual(result.total_errors, 0)
+
     def test_S_integer_size(self):
         """integer validation"""
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
@@ -28,6 +29,7 @@ class Square_Tests(unittest.TestCase):
             r = Square({})
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Square(10.1)
+
     def test_S_integer_x(self):
         """integer validation"""
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
@@ -38,6 +40,7 @@ class Square_Tests(unittest.TestCase):
             r = Square(10, {})
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Square(10, 2.1)
+
     def test_S_integer_y(self):
         """integer validation"""
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
