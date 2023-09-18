@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""Defines base model"""
+"""
+Defines base model
+"""
 import json
 import csv
 
 
 class Base:
+    """initialization of class Base"""
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -16,7 +19,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ Returns A JSON STRING"""
+        """Returns A JSON STRING"""
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
@@ -33,17 +36,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """
-            write json representation of string
-        """
+        """write json representation of string"""
         if not json_string:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """
-        """
+        """returns instances with all atributes set"""
         if cls.__name__ == 'Rectangle':
             a = cls(1, 1)
         if cls.__name__ == 'Square':
