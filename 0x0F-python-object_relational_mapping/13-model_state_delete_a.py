@@ -18,8 +18,10 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    session = Session(engine)
-    for state in session.query(State).filter(State.name.like('%a%')):
-        session.delete(state)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    session.query(State).filter(State.name.contains('%a%')).delete(
+        synchronize_session='fetch')
     session.commit()
     session.close()
