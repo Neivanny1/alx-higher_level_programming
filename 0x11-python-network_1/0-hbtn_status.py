@@ -3,18 +3,16 @@
 Module that fetches a url
 """
 
+import urllib.request
 
 def fetch_url():
-
-    import urllib.request
-
     url = 'https://alx-intranet.hbtn.io/status'
-    with urllib.request.urlopen(url) as rp:
-        response = rp.read()
+    with urllib.request.urlopen(url) as response:
+        html = response.read()
         print("Body response:")
-        print(f"\t- type: {type(response)}")
-        print(f"\t- content: {response}")
-        print(f"\t- utf8 content: {response.decode()}")
+        print('\t- type: {}'.format(type(html)))
+        print('\t- content: {}'.format(html))
+        print('\t- utf8 content: {}'.format(html.decode()))
 
 
 if __name__ == "__main__":
