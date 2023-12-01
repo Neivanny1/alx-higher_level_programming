@@ -4,9 +4,12 @@ Module to send request to a url
 """
 
 
-import sys
+from sys import argv
+import urllib.parse
 import urllib.request
 
 if __name__ == "__main__":
     with urllib.request.urlopen(sys.argv[1]) as response:
-        print(response.headers['X-Request-Id'])
+        ans = response.info()
+        req = ans.get('X-Request-Id')
+        print(req)
