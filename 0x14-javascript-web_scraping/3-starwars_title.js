@@ -6,9 +6,16 @@ const url = 'http://swapi.co/api/films/' + process.argv[2];
 
 request(url, function (error, response, body) {
   if (error) {
-    console.log(error);
+    console.error(error);
+  } else if (response.statusCode !== 200) {
+    console.error('Unexpected response status code:', response.statusCode);
   } else {
-    const data = JSON.parse(body);
-    console.log(data['title']);
+    console.log('Response body:', body); // Log the entire response body for inspection
+    try {
+      const data = JSON.parse(body);
+      console.log('Title:', data['title']);
+    } catch (parseError) {
+      console.error('Error parsing JSON:', parseError);
+    }
   }
 });
